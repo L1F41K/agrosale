@@ -119,6 +119,7 @@
 	color: var(--button-bgc);
 	line-height: 1;
 }
+
 .map-bg img:last-child {
 	display: none;
 }

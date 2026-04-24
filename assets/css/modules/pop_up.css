@@ -1,0 +1,92 @@
+/* Затемняющий фон */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7); /* Темный фон */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+}
+
+/* Класс для открытия */
+.popup-overlay.active {
+	opacity: 1;
+	visibility: visible;
+}
+.popup-overlay .feedback-col {
+	padding: 0;
+}
+/* Контейнер самой формы */
+.popup-content {
+	background: #fff;
+	padding: 40px;
+	border-radius: 20px;
+	position: relative;
+	max-width: 900px;
+	width: 90%;
+	transform: translateY(-20px);
+	transition: transform 0.3s ease;
+}
+
+.popup-overlay.active .popup-content {
+	transform: translateY(0);
+}
+
+/* Кнопка закрытия */
+.close-popup {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 24px; /* Область клика */
+	height: 24px; /* Область клика */
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.close-popup::before,
+.close-popup::after {
+	content: '';
+	position: absolute;
+	width: 100%; /* Длина линии внутри кнопки */
+	height: 2px; /* Твоя ширина (толщина) линии */
+	background-color: #b5b5b5; /* Твой цвет */
+	border-radius: 2px;
+	transition: background-color 0.2s ease;
+}
+
+/* Поворачиваем линии, чтобы получился крестик */
+.close-popup::before {
+	transform: rotate(45deg);
+}
+
+.close-popup::after {
+	transform: rotate(-45deg);
+}
+
+/* Эффект при наведении (опционально) */
+.close-popup:hover::before,
+.close-popup:hover::after {
+	background-color: #999; /* Чуть темнее при наведении */
+}
+
+/* Стили для формы внутри (чтобы выглядело аккуратно) */
+.form-card .feedback-title {
+	margin-bottom: 30px;
+	font-size: clamp(32px, 5vw + 1rem, 70px);
+}
+.form-card .feedback-subtitle {
+	margin-bottom: 40px;
+	font-size: 20px;
+}

@@ -10,6 +10,25 @@ burger.addEventListener('click', () => {
 	document.body.classList.toggle('no-scroll')
 })
 
+// Открытие (замени '.open-btn' на класс своей кнопки)
+document.querySelectorAll('.open-btn').forEach(btn => {
+	btn.addEventListener('click', e => {
+		e.preventDefault()
+		document.getElementById('pricePopup').classList.add('active')
+	})
+})
+
+// Закрытие по крестику
+document.querySelector('.close-popup').addEventListener('click', () => {
+	document.getElementById('pricePopup').classList.remove('active')
+})
+
+// Закрытие по клику на фон
+document.getElementById('pricePopup').addEventListener('click', e => {
+	if (e.target.classList.contains('popup-overlay')) {
+		e.target.classList.remove('active')
+	}
+})
 const slider = document.querySelector('.partners__slider-line')
 let isDown = false
 let startX
