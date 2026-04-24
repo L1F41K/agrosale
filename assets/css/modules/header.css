@@ -54,10 +54,12 @@
 	font-size: 18px;
 	background: transparent;
 }
-
+.btn-price:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
 .btn-outline:hover {
 	background: var(--text-white);
-	color: #000;
+	color: var(--button-bgc);
 }
 .btn-price {
 	background: transparent; /* Сине-серый цвет с макета */

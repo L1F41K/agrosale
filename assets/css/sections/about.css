@@ -52,13 +52,17 @@
 .about__btn {
 	display: inline-block;
 	padding: 24px 32px;
+	border: 1px solid var(--button-bgc);
 	background: var(--button-bgc); /* Цвет кнопки с макета */
 	color: #fff;
 	text-decoration: none;
-	transition: 0.3s;
+	transition: all 0.3s ease;
 	margin-bottom: 60px;
 }
-
+.about__btn:hover {
+	background: transparent;
+	color: var(--button-bgc);
+}
 /* Сетка карточек в 2 колонки */
 .about__grid {
 	display: grid;

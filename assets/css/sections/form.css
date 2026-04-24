@@ -80,6 +80,12 @@
 	font-size: 16px;
 	cursor: pointer;
 	margin-top: 10px;
+	border: 1px solid var(--button-bgc);
+	transition: all 0.3s ease;
+}
+.btn-submit:hover {
+	background-color: transparent;
+	color: var(--button-bgc);
 }
 @media (max-width: 1400px) {
 	.request-wrapper {
