@@ -61,88 +61,74 @@
 					</ul>
 				</div>
 			</nav>
-			<section class="contacts-section">
+			<section class="feedback-section">
 				<div class="container">
-					<div class="contacts-wrapper">
-						<div class="contacts-image">
-							<img src="assets/img/contacts.png" alt="Логистический узел" />
-						</div>
+					<div class="feedback-wrapper">
+						<div class="feedback-col contacts-card">
+							<h2 class="feedback-title">Контакты</h2>
 
-						<div class="contacts-content">
-							<h2 class="contacts-title">Контакты</h2>
-
-							<div class="contact-item">
-								<p class="contact-label">Телефон:</p>
-								<a href="tel:+78129957788" class="contact-value"
-									>+7 (812) 995-77-88</a
-								>
+							<div class="contact-group">
+								<span class="label">Телефон:</span>
+								<a href="tel:+78129957788" class="value">+7 (812) 995-77-88</a>
 							</div>
 
-							<div class="contact-item">
-								<p class="contact-label">E-mail:</p>
-								<a href="mailto:info@agro-sale.com" class="contact-value"
+							<div class="contact-group">
+								<span class="label">E-mail:</span>
+								<a href="mailto:info@agro-sale.com" class="value"
 									>info@agro-sale.com</a
 								>
 							</div>
 
-							<div class="contact-item">
-								<p class="contact-label">Офис:</p>
-								<p class="contact-value">
+							<div class="contact-group">
+								<span class="label">Офис:</span>
+								<p class="value">
 									195067, г. Санкт-Петербург, ул. Маршала Тухачевского д. 22,
 									лит. А, офис 303
 								</p>
 							</div>
 
-							<div class="contact-item">
-								<p class="contact-label">Склад 1:</p>
-								<p class="contact-value">
+							<div class="contact-group">
+								<span class="label">Склад 1:</span>
+								<p class="value">
 									г.Санкт-Петербург, Пискаревский пр. 131, стр. 2
 								</p>
 							</div>
 
-							<div class="contact-item">
-								<p class="contact-label">Склад 2:</p>
-								<p class="contact-value">
+							<div class="contact-group">
+								<span class="label">Склад 2:</span>
+								<p class="value">
 									г. Санкт-Петербург, пос. Шушары, ул. Пушкинская, д. 25, к. 3
 								</p>
 							</div>
 						</div>
-					</div>
-				</div>
-			</section>
-			<section class="request-section">
-				<div class="container">
-					<div class="request-wrapper">
-						<div class="request-info">
-							<h2 class="request-title">Запросить прайс</h2>
-							<p class="request-text">
+
+						<div class="feedback-col form-card">
+							<h2 class="feedback-title">Запросить прайс</h2>
+							<p class="feedback-subtitle">
 								Заполните форму, и наши специалисты свяжутся с вами для
 								консультации по прайсу, поставкам и логистике мяса из разных
 								стран.
 							</p>
+
+							<form class="price-form">
+								<div class="input-wrapper full">
+									<label>Ваши фамилия и имя:</label>
+									<input
+										type="text"
+										placeholder="Введите полностью фамилию и имя"
+									/>
+								</div>
+								<div class="input-wrapper">
+									<label>Ваш E-mail:</label>
+									<input type="email" placeholder="Введите электронную почту" />
+								</div>
+								<div class="input-wrapper">
+									<label>Ваш телефон:</label>
+									<input type="tel" placeholder="Введите номер телефона" />
+								</div>
+								<button type="submit" class="btn-send">Отправить запрос</button>
+							</form>
 						</div>
-
-						<form class="request-form">
-							<div class="form-group full-width">
-								<label>Ваши фамилия и имя:</label>
-								<input
-									type="text"
-									placeholder="Введите полностью фамилию и имя"
-								/>
-							</div>
-
-							<div class="form-group">
-								<label>Ваш E-mail:</label>
-								<input type="email" placeholder="Введите электронную почту" />
-							</div>
-
-							<div class="form-group">
-								<label>Ваш телефон:</label>
-								<input type="tel" placeholder="Введите номер телефона" />
-							</div>
-
-							<button type="submit" class="btn-submit">Отправить запрос</button>
-						</form>
 					</div>
 				</div>
 			</section>

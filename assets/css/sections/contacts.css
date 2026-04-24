@@ -1,90 +1,124 @@
-.contacts-section {
-	padding: 100px 40px;
-	background-color: #f5f6f5; /* Светло-серый фон как на макете */
+.feedback-section {
+	padding: 40px;
+	background-color: #f5f5f5; /* Общий серый фон секции */
 }
 
-.contacts-wrapper {
+.feedback-wrapper {
 	display: flex;
-	align-items: flex-start;
-	gap: 176px; /* Большой отступ между фото и текстом */
+	gap: 30px;
 }
 
-/* Левая часть */
-.contacts-image {
-	flex: 0 0 600px; /* Фиксированная ширина изображения */
-	max-height: 765px;
-	height: 765px;
-}
-
-.contacts-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-/* Правая часть */
-.contacts-content {
+.feedback-col {
+	background: #fff; /* Белые карточки */
+	padding: 60px;
 	flex: 1;
 }
 
-.contacts-title {
-	margin-bottom: 60px;
+.feedback-title {
+	margin-bottom: 30px;
 }
 
-.contact-item {
-	margin-bottom: 35px;
+/* Стили контактов */
+.contact-group {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #f0f0f0;
+	padding-bottom: 15px;
 }
-.contact-item:last-child {
-	margin-bottom: 0;
+
+.contact-group:last-child {
+	border: none;
 }
-.contact-label {
+
+.label {
+	display: block;
 	font-size: 20px;
 	font-weight: 300;
-	color: var(--c-blue);
-	margin-bottom: 20px;
-	text-transform: capitalize;
+	color: #b5b5b5;
+	margin-bottom: 16px;
 }
 
-.contact-value {
-	font-size: 28px;
+.value {
+	font-size: 20px;
 	color: #333;
 	text-decoration: none;
-	display: block;
 	line-height: 1.4;
-	font-weight: 400;
 }
 
-/* Стили для ссылок при наведении */
-a.contact-value:hover {
-	color: #1a2b48;
+/* Стили формы */
+.feedback-subtitle {
+	font-weight: 300;
+	font-size: 20px;
+	color: #333;
+	margin-bottom: 60px;
+	line-height: 1.4;
 }
 
-/* Адаптивность */
-@media (max-width: 1092px) {
-	.contacts-section {
-		padding: 60px 20px;
-	}
-	.contacts-wrapper {
+.price-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px 20px;
+}
+
+.input-wrapper.full {
+	grid-column: span 2;
+}
+
+.input-wrapper label {
+	display: block;
+	font-size: 20px;
+	color: var(--c-blue);
+	margin-bottom: 8px;
+}
+
+.input-wrapper input {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+	font-size: 20px;
+	outline: none;
+}
+.input-wrapper input::placeholder {
+	color: #b5b5b5;
+}
+.btn-send {
+	grid-column: span 2;
+	justify-self: start;
+	background: var(--button-bgc);
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	padding: 24px 32px;
+	cursor: pointer;
+	margin-top: 22px;
+	border: 1px solid var(--button-bgc);
+	transition: all 0.3s ease;
+}
+.btn-send:hover {
+	background-color: transparent;
+	color: var(--button-bgc);
+}
+/* Адаптив */
+@media (max-width: 1100px) {
+	.feedback-wrapper {
 		flex-direction: column;
-		gap: 40px;
 	}
+	.feedback-col {
+		padding: 40px;
+	}
+	.feedback-title {
+		font-size: 42px;
+	}
+}
 
-	.contacts-image {
-		flex: 0 0 auto;
-		width: 100%;
-		height: 300px;
+@media (max-width: 786px) {
+	.price-form {
+		grid-template-columns: 1fr;
 	}
-
-	.contacts-title {
-		margin-bottom: 30px;
+	.input-wrapper.full {
+		grid-column: span 1;
 	}
-	.contact-value {
-		font-size: 18px;
-	}
-	.contact-label {
-		font-size: 16px;
-	}
-	.contact-item {
-		margin-bottom: 15px;
+	.btn-send {
+		grid-column: span 1;
 	}
 }
