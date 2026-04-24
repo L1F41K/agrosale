@@ -146,8 +146,11 @@
 	.map-section {
 		padding: 30px 20px;
 	}
+	.map-container {
+		gap: 20px;
+	}
 	.map-footer {
-		margin-top: 45vw;
+		margin-top: 45px;
 	}
 	.map-bg img:first-child {
 		display: none;
