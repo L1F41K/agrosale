@@ -1,0 +1,118 @@
+.products-section {
+	padding: 120px 0;
+	background-color: #fff;
+}
+
+/* Флекс-контейнер для заголовка и текста */
+.products-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+	padding: 0 40px;
+}
+
+.main-title {
+	margin: 0;
+	flex: 1;
+}
+
+.description-text {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.4;
+	color: #333;
+	max-width: 670px; /* Ограничиваем ширину текста как на макете */
+	margin: 0;
+}
+
+/* Подзаголовок */
+.category-subtitle {
+	font-size: 32px;
+	color: var(--c-blue);
+	margin-top: 60px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;
+	padding: 40px;
+}
+
+/* Сетка карточек (5 колонок как на скрине) */
+.products-grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 32px;
+	padding: 0 40px;
+}
+
+.product-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.product-image {
+	background-color: #f6f6f5; /* Серый фон для фото */
+	aspect-ratio: 1 / 1; /* Квадратные карточки */
+	max-width: 342px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.description-text-wrapper {
+	gap: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.product-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* Чтобы куски мяса не обрезались */
+	mix-blend-mode: multiply; /* Если фото на белом фоне, уберет границы */
+}
+
+.product-name {
+	font-size: 24px;
+	font-weight: 300;
+	color: #333;
+	line-height: 1.18;
+	letter-spacing: -0.02em;
+	text-align: center;
+	margin: 0;
+}
+
+/* Адаптив для планшетов и телефонов */
+@media (max-width: 1024px) {
+	.products-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.products-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+		padding: 0 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.products-grid {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 0 20px;
+		gap: 20px 6px;
+	}
+	.main-title {
+		font-size: 32px;
+	}
+	.description-text {
+		font-size: 16px;
+	}
+	.category-subtitle {
+		margin-top: 30px;
+		margin-bottom: 16px;
+		padding: 20px;
+	}
+	.product-name {
+		font-size: 14px;
+	}
+}

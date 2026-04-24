@@ -1,0 +1,11 @@
+.company-partner {
+	padding: 120px 0;
+}
+.company-partner .products-header {
+	align-items: flex-start;
+	border-bottom: 1px solid #edf3f9;
+	padding-bottom: 120px;
+}
+.company-partner .partners__slider-line {
+	padding-top: 120px;
+}

@@ -1,0 +1,14 @@
+@import url('./modules/header.css');
+@import url('./modules/footer.css');
+@import url('./core/base.css');
+@import url('./sections/landing.css');
+@import url('./sections/partner.css');
+@import url('./sections/about.css');
+@import url('./sections/meat.css');
+@import url('./sections/map.css');
+@import url('./sections/meat-landing.css');
+@import url('./sections/product.css');
+@import url('./sections/company-partner.css');
+@import url('./sections/principles.css');
+@import url('./sections/contacts.css');
+@import url('./sections/form.css');

@@ -1,0 +1,139 @@
+.principles-section {
+	padding: 100px 0;
+	background-color: #f5f6f5; /* Светлый фон как на макете */
+}
+
+.principles-grid {
+	display: grid;
+	/* 3 колонки: первая под текст, остальные под карточки */
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+	padding: 0 40px;
+}
+
+/* Текстовый блок */
+.principles-info {
+	display: flex;
+	flex-direction: column;
+	padding-right: 40px;
+}
+
+.overline {
+	text-transform: uppercase;
+	font-size: 16px;
+	color: var(--c-blue);
+	letter-spacing: 1.4;
+	margin-bottom: 50px;
+}
+
+.principles-title {
+	font-size: 66px;
+	line-height: 1;
+	letter-spacing: -0.06em;
+	color: var(--c-blue);
+	margin-bottom: 30px;
+}
+
+.principles-desc {
+	font-size: 20px;
+	font-weight: 300;
+	color: #333;
+	line-height: 1.4;
+}
+
+/* Карточки */
+.principle-card {
+	background: #fff;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	min-height: 400px; /* Чтобы карточки были высокими */
+}
+
+.card-icon {
+	width: 100%;
+	max-width: 266px; /* Ограничение по ТЗ */
+	margin-bottom: 40px;
+	display: flex;
+	align-items: center;
+}
+
+.card-icon img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+
+.card-title {
+	font-size: 40px;
+	color: #333;
+	margin-bottom: 36px;
+	font-weight: 400;
+}
+
+.card-text {
+	font-size: 20px;
+	font-weight: 300;
+	color: #333;
+	line-height: 1.4;
+}
+
+/* Адаптивность */
+/* Адаптивность */
+@media (max-width: 1200px) {
+	.principles-grid {
+		grid-template-columns: 1fr 1fr; /* На планшетах и больших мобилках 2 колонки */
+	}
+
+	/* Текстовый блок занимает всю первую строку (обе колонки) */
+	.principles-info {
+		grid-column: span 2;
+		padding-right: 0;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.principles-section,
+	.company-partner {
+		padding: 30px 0;
+	}
+	.company-partner .products-header {
+		padding-bottom: 30px;
+	}
+	.company-partner .partners__slider-line {
+		padding-top: 30px;
+	}
+	/* Если на совсем маленьких экранах (iPhone SE и т.д.) 
+     две карточки в ряд смотрятся слишком узко, можно оставить 1 колонку */
+	.principles-grid {
+		padding: 0 20px;
+	}
+	.card-icon {
+		max-width: 100px;
+		margin-bottom: 20px;
+	}
+	.overline {
+		margin-bottom: 20px;
+	}
+	.principles-info {
+		grid-column: span 2;
+	}
+
+	.principles-title {
+		font-size: 32px; /* Уменьшаем гигантский заголовок для мобилки */
+	}
+	.principle-card {
+		padding: 16px;
+	}
+	.card-title {
+		font-size: 16px;
+		margin-bottom: 8px;
+	}
+	.card-text {
+		font-size: 12px;
+	}
+	.principle-card {
+		min-height: 0;
+	}
+}

@@ -1,0 +1,167 @@
+.map-section {
+	position: relative;
+	width: 100%;
+	min-height: 800px;
+	background-color: #fff; /* Или светлый фон из макета */
+	/* Паддинги по ТЗ */
+	padding: 120px 40px 45px 40px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Карта на всю ширину и высоту секции */
+.map-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.map-img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* Чтобы карта не обрезалась, а вписалась */
+	object-position: bottom center; /* Прижимаем карту к низу как на макете */
+}
+.map-title {
+	font-size: clamp(32px, 5vw, 86px);
+}
+.map-section.geography .map-header-left {
+	flex: 0 0 50%;
+}
+.map-section.geography .map-header-right {
+	flex: 0 0 670px;
+}
+/* Контентный слой */
+.map-container {
+	position: relative;
+	z-index: 2;
+	max-width: 100% !important; /* Игнорируем ограничения контейнера */
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Распределяем верх и низ */
+}
+
+/* Шапка секции */
+.map-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: clamp(20px, 1vw, 60px);
+	padding-top: 30px;
+}
+.map-section.map-section.geography {
+	padding-top: 0;
+}
+.map-header-left {
+	flex: 0 0 60%;
+}
+
+.map-title {
+	font-weight: 400;
+	margin: 0;
+}
+
+.map-header-right {
+	flex: 0 0 510px;
+	text-align: right;
+}
+
+.map-descr {
+	font-size: clamp(24px, 3vw, 48px);
+	color: var(--c-blue);
+	line-height: 1.1;
+	letter-spacing: -0.06em;
+	margin-bottom: 40px;
+}
+
+/* Кнопка (адаптируй под свой стиль) */
+.btn-outline {
+	display: inline-block;
+	padding: 24px 32px;
+	border: 1px solid var(--button-bgc);
+	color: #fff;
+	background: var(--button-bgc); /* Цвет из кнопки на скриншоте */
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	transition: 0.3s;
+}
+
+/* Статистика внизу */
+.map-footer {
+	display: flex;
+	justify-content: flex-end; /* Текст справа снизу */
+	margin-top: 580px;
+}
+
+.map-stats {
+	text-align: right;
+}
+
+.stats-label {
+	display: block;
+	font-size: clamp(14px, 3vw, 27px);
+	color: #6a89a7;
+	letter-spacing: -0.06em;
+	margin-bottom: 15px;
+}
+
+.stats-value {
+	font-size: clamp(32px, 5vw, 80px);
+	font-weight: 600;
+	color: var(--button-bgc);
+	line-height: 1;
+}
+.map-bg img:last-child {
+	display: none;
+}
+@media (max-width: 1700px) {
+	.map-footer {
+		margin-top: 450px;
+	}
+}
+/* Адаптив */
+@media (max-width: 1400px) {
+	.map-header {
+		flex-direction: column;
+		gap: 30px;
+	}
+	.map-header-right,
+	.map-section.geography .map-header-right {
+		text-align: left;
+		flex: 1;
+	}
+	.map-footer {
+		margin-top: 30vw;
+	}
+}
+@media (max-width: 768px) {
+	.map-section {
+		padding: 30px 20px;
+	}
+	.map-footer {
+		margin-top: 45vw;
+	}
+	.map-bg img:first-child {
+		display: none;
+	}
+	.map-bg img:last-child {
+		display: block;
+	}
+	.stats-label {
+		margin-bottom: 10px;
+	}
+	.map-section.geography .map-header {
+		padding-top: 0;
+	}
+	.map-section.geography {
+		padding-top: 0;
+	}
+}

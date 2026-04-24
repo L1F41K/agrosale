@@ -1,0 +1,202 @@
+.footer {
+	background-color: #34445e; /* Темно-синий фон как на макете */
+	color: #ffffff;
+}
+
+.footer .container {
+	padding: 80px 40px;
+}
+
+.footer__top {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 50px;
+}
+
+.footer__title {
+	font-size: 40px;
+	margin-bottom: 70px;
+	font-weight: 400;
+	color: #fff;
+	letter-spacing: 0;
+}
+
+/* Стили формы */
+.footer__input-group {
+	display: flex;
+	align-items: center;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #fff;
+}
+
+.footer__input {
+	background: transparent;
+	border: none;
+	color: #fff;
+	outline: none;
+	font-size: 24px;
+	font-weight: 500;
+	flex-grow: 1;
+	opacity: 1;
+}
+.footer__input::placeholder {
+	color: #fff;
+	opacity: 1; /* В Firefox по умолчанию opacity меньше 1 */
+}
+.footer__btn {
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 24px 32px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	transition: 0.3s;
+}
+
+.footer__btn:hover {
+	background: #fff;
+	color: #34445e;
+}
+
+/* Навигация */
+.footer__nav {
+	display: flex;
+	gap: clamp(20px, 5vw, 130px);
+}
+
+.footer__nav-link,
+.footer__nav-title {
+	font-size: 24px;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 400;
+}
+.footer__nav-title {
+	font-weight: 400;
+	margin-bottom: 22px;
+}
+.footer__nav-col {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.footer__contact-link {
+	color: #dcdce8;
+	text-decoration: underline;
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 14px;
+}
+
+/* Логотип по центру */
+.footer__logo-wrap {
+	display: flex;
+	justify-content: center;
+	margin: 40px 0;
+}
+
+.footer__logo-img {
+	max-width: 100%;
+	height: auto;
+	opacity: 0.2; /* Делаем полупрозрачным как подложку */
+}
+
+/* Футер низ */
+.footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+	font-weight: 500;
+	padding-top: 20px;
+	color: #bababa;
+}
+
+.footer__policy {
+	text-decoration: none;
+	color: #bababa;
+}
+@media (max-width: 1100px) {
+	.footer .container {
+		padding: 60px 20px;
+	}
+
+	.footer__top {
+		flex-direction: column;
+		gap: 60px;
+	}
+
+	/* Навигация в столбик */
+	.footer__nav {
+		flex-direction: column;
+		gap: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.footer .container {
+		padding: 30px 20px;
+	}
+	.footer__title {
+		font-size: 24px;
+		margin-bottom: 40px;
+	}
+
+	/* Форма: инпут и кнопка друг под другом */
+	.footer__form {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 24px;
+	}
+	.footer__form-col {
+		width: 100%;
+	}
+	.footer__input-group {
+		padding-bottom: 15px;
+		flex-direction: column;
+		gap: 30px;
+		border: none;
+		align-items: flex-start;
+	}
+
+	.footer__input {
+		font-size: 20px;
+		border-bottom: 1px solid #fff;
+		padding-bottom: 30px;
+		width: 100%;
+	}
+
+	.footer__btn {
+		align-self: flex-start; /* Кнопка не на всю ширину, как на макете */
+		padding: 16px 32px;
+		font-size: 16px;
+	}
+
+	/* Ссылки и контакты */
+	.footer__nav-link,
+	.footer__nav-title {
+		font-size: 24px; /* Крупные заголовки разделов */
+	}
+
+	.footer__contact-link {
+		font-size: 16px;
+		margin-bottom: 24px;
+	}
+
+	/* Логотип-подложка */
+	.footer__logo-wrap {
+		margin: 30px 0;
+		justify-content: flex-start; /* Выравнивание по левому краю как на фото */
+	}
+
+	/* Нижняя часть */
+	.footer__bottom {
+		flex-direction: column;
+		gap: 15px;
+		font-size: 14px;
+		padding-top: 0;
+	}
+}

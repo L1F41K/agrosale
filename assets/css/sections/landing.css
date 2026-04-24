@@ -1,0 +1,181 @@
+.hero {
+	position: relative;
+	height: 100vh;
+	min-height: 700px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	color: #fff;
+}
+
+/* Стили видео на весь экран */
+.hero__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -2;
+}
+
+/* Затемнение, чтобы текст читался лучше */
+.hero__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.4) 0%,
+		rgba(0, 0, 0, 0.2) 100%
+	);
+	z-index: -1;
+}
+
+.hero__container {
+	height: 100vh; /* Контейнер на всю высоту экрана */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; /* Начинаем сверху */
+	padding-top: 170px; /* Отступ сверху под шапку */
+}
+
+/* Сетка для заголовков */
+.hero__titles {
+	flex-grow: 1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: start;
+	gap: 40px;
+	padding: 0 40px;
+}
+
+.hero__title-left {
+	font-size: clamp(40px, 8vw, 120px);
+	line-height: 0.9;
+	text-transform: none;
+	font-weight: 400;
+	letter-spacing: -0.06em;
+}
+
+.hero__title-right {
+	font-size: clamp(40px, 8vw, 120px);
+	line-height: 0.9;
+	text-align: right;
+	text-transform: lowercase;
+	font-weight: 400;
+	max-width: 500px;
+	margin-left: auto;
+	color: #fff;
+}
+
+.hero__title-right span {
+	color: #a5b8cc; /* Тот самый голубоватый оттенок для "мясного" */
+}
+
+/* Нижняя панель преимуществ */
+.hero__features {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	margin-top: auto;
+}
+
+.feature-item {
+	padding: 50px 41px;
+	font-size: 24px;
+	line-height: 1;
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	display: flex;
+	font-weight: 300;
+	align-items: center;
+	transition: background 0.3s;
+	cursor: pointer;
+	text-align: center;
+	justify-content: center;
+}
+
+.feature-item:last-child {
+	border-right: none;
+}
+
+.feature-item:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+/* Адаптация для планшетов и небольших ноутбуков (до 1440px) */
+@media (max-width: 1440px) {
+	.hero__titles {
+		padding: 0 20px;
+		gap: 20px;
+	}
+
+	.feature-item {
+		padding: 30px 20px;
+		font-size: 20px;
+	}
+}
+
+/* Адаптация для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+	.hero {
+		height: auto;
+		min-height: 100svh; /* Используем svh для мобильных браузеров */
+	}
+
+	.hero__container {
+		padding-top: 100px; /* Уменьшаем отступ под шапку */
+		height: auto;
+		min-height: 100svh;
+	}
+
+	/* Заголовки в одну колонку */
+	.hero__titles {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 10px;
+		margin-bottom: 60px; /* Отступ до блока преимуществ */
+	}
+
+	.hero__title-left {
+		text-align: left;
+		font-size: 42px; /* Фиксированный размер или меньший clamp */
+		line-height: 1.1;
+	}
+
+	.hero__title-right {
+		text-align: right;
+		font-size: 42px;
+		line-height: 1.1;
+		align-self: flex-end;
+		max-width: 300px; /* Чтобы текст красиво переносился */
+	}
+
+	/* Сетка преимуществ: 2x2 */
+	.hero__features {
+		grid-template-columns: 1fr 1fr;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.feature-item {
+		padding: 25px 15px;
+		font-size: 16px;
+		line-height: 1.3;
+		min-height: 120px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	/* Убираем правый бортик у четных элементов в сетке 2х2 */
+	.feature-item:nth-child(2n) {
+		border-right: none;
+	}
+
+	/* Убираем нижний бортик у последних двух элементов */
+	.feature-item:nth-last-child(-n + 2) {
+		border-bottom: none;
+	}
+}

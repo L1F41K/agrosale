@@ -1,0 +1,357 @@
+/* Основные настройки секции - на весь экран */
+.meat-selection {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #34495f; /* Цвет фона, если видео не загрузится */
+}
+
+/* Видео на заднем плане */
+.meat-video-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.meat-video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Заполняет все пространство */
+}
+
+/* Слой визуализации (Пины и Линии) на всю ширину */
+.meat-visual-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	/* Убираем padding, чтобы пины могли быть у самых краев */
+	padding: 0;
+}
+
+/* Общие стили для всех пинов */
+.pin {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 5;
+	color: #fff;
+}
+
+.pin-dot {
+	width: 32px; /* Размер пина */
+	height: 32px;
+	position: relative;
+	z-index: 2;
+}
+
+.pin-dot img {
+	width: 100%;
+	height: auto;
+}
+
+.pin-label {
+	margin-top: 10px;
+	font-size: 24px;
+	font-weight: 400;
+	white-space: nowrap;
+	color: #c7ced8;
+}
+
+/* Пунктирные линии */
+.pin-line {
+	position: absolute;
+	pointer-events: none; /* Чтобы не мешали взаимодействию */
+	z-index: 1;
+	/* Позиционирование линии относительно пина */
+}
+.pin-beef {
+	top: 25%;
+	left: 20%;
+}
+.pin-buffalo {
+	top: 45%;
+	left: 15%;
+}
+.pin-horse {
+	top: 75%;
+	right: 28%;
+}
+.pin-chicken {
+	top: 65%;
+	right: 22%;
+}
+/* Настройка конкретных линий (пример) - подкрути под свои SVG */
+.pin-beef .pin-line.line-1 {
+	bottom: -8px;
+	right: -52px;
+}
+
+.pin-buffalo .pin-line.line-2 {
+	top: -35px;
+	left: -343px;
+}
+.pin-horse .pin-line.line-3 {
+	top: -37px;
+	left: -73px;
+}
+.pin-chicken .pin-line.line-4 {
+	top: -22px;
+	left: -67px;
+}
+/* Контейнер для текстового контента на переднем плане */
+.meat-info-container {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	/* Добавляем padding для отступа контента от краев экрана */
+	padding: 120px 40px;
+	display: flex;
+	justify-content: flex-end; /* Выравнивание контента по правому краю */
+}
+
+/* Текстовый блок справа */
+.meat-info {
+	max-width: 600px;
+	text-align: right;
+	color: #fff;
+}
+
+.meat-subtitle {
+	display: block;
+	font-size: 16px;
+	line-height: 1.4;
+	letter-spacing: 0.2rem;
+	color: #e1eaf3;
+	margin-bottom: 20px;
+}
+
+.meat-title {
+	font-size: clamp(32px, 2.7vw, 48px);
+	line-height: 1.1;
+	font-weight: 400;
+	margin-bottom: 40px;
+	color: #fff;
+}
+
+/* Кнопка */
+.btn-primary {
+	display: inline-block;
+	padding: 24px 32px;
+	border: 1px solid #fff;
+	color: #fff;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 500;
+	transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+	background-color: #fff;
+	color: #3c4a5e;
+}
+.line-1_mobile,
+.line-2_mobile,
+.line-3_mobile,
+.line-4_mobile {
+	display: none;
+}
+
+/* Адаптивность для мобильных устройств */
+/* Планшеты и малые экраны */
+@media (max-width: 1440px) {
+	.meat-info {
+		max-width: 500px;
+	}
+	.pin-beef {
+		top: 25%;
+		left: 4%;
+	}
+	.pin-buffalo {
+		top: 71%;
+		left: 7%;
+	}
+	.pin-chicken {
+		top: 57%;
+		right: 5%;
+	}
+	.pin-horse {
+		right: 6%;
+	}
+	.line-1,
+	.line-2,
+	.line-3,
+	.line-4 {
+		display: none;
+	}
+	.line-1_mobile,
+	.line-2_mobile,
+	.line-3_mobile,
+	.line-4_mobile {
+		display: block;
+	}
+	.line-1_mobile {
+		top: -158px;
+		right: 40px;
+	}
+	.line-2_mobile {
+		top: -38px;
+		right: 12px;
+	}
+	.line-3_mobile {
+		top: -35px;
+		left: 4px;
+	}
+	.line-4_mobile {
+		top: -153px;
+		left: 29px;
+	}
+}
+
+/* Мобильная версия (согласно скриншоту) */
+@media (max-width: 768px) {
+	.meat-selection {
+		height: auto;
+		min-height: 100svh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.meat-info-container {
+		position: relative; /* Вынимаем из абсолютного позиционирования */
+		padding: 40px 20px;
+		height: auto;
+		justify-content: flex-start; /* На скриншоте текст вверху */
+		order: 1; /* Текст первым */
+		padding-bottom: 100px;
+	}
+
+	.meat-info {
+		text-align: left; /* На скриншоте выравнивание по левому краю или центру */
+		max-width: 100%;
+	}
+
+	.meat-subtitle {
+		text-align: right;
+	}
+
+	.meat-title {
+		text-align: right;
+		font-size: 32px;
+		margin-bottom: 24px;
+	}
+
+	.btn-primary {
+		display: block;
+		width: fit-content;
+		margin-left: auto; /* Кнопка справа как на макете */
+		padding: 24px 32px;
+	}
+
+	/* Визуальный слой с пинами */
+	.meat-visual-overlay {
+		position: relative;
+		height: 500px; /* Фиксированная высота для области с мясом и пинами */
+		order: 2;
+		overflow: visible;
+	}
+	.meat-video-bg {
+		top: 30%;
+		left: 10%;
+	}
+	.meat-video-bg video {
+		height: 60%;
+	}
+	/* Перепозиционирование пинов под мобильный макет */
+	.pin {
+		flex-direction: row; /* Точка и текст в линию */
+		gap: 10px;
+		align-items: center;
+	}
+
+	.pin-label {
+		margin-top: 0;
+		font-size: 20px;
+		color: #eef2f8;
+	}
+
+	/* Говядина (слева сверху) */
+	.pin-beef {
+		top: -5%;
+		left: 5%;
+		flex-direction: row;
+	}
+	/* Курица (справа сверху) */
+	.pin-chicken {
+		top: -4.9%;
+		right: 5%;
+		left: auto;
+		flex-direction: row-reverse; /* Точка справа от текста */
+	}
+
+	/* Буйвол (слева снизу) */
+	.pin-buffalo {
+		top: 70%;
+		left: 5%;
+		flex-direction: row-reverse;
+	}
+	.pin-dot {
+		width: 25px;
+		height: 20px;
+		padding-bottom: 5px;
+	}
+	/* Конина (справа снизу) */
+	.pin-horse {
+		top: 70%;
+		right: 5%;
+		bottom: auto;
+	}
+
+	/* Если мясо — это отдельная картинка в центре, добавь ей стили */
+	.meat-center-img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%;
+		z-index: 4;
+	}
+	.line-1,
+	.line-2,
+	.line-3,
+	.line-4 {
+		display: none;
+	}
+	.line-1_mobile,
+	.line-2_mobile,
+	.line-3_mobile,
+	.line-4_mobile {
+		display: block;
+	}
+	.line-1_mobile {
+		top: -132px;
+		right: 60px;
+	}
+	.line-2_mobile {
+		top: -28px;
+		right: -10px;
+	}
+	.line-3_mobile {
+		top: -12px;
+		left: 0px;
+	}
+	.line-4_mobile {
+		top: -128px;
+		left: 45px;
+	}
+}

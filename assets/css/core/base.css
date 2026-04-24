@@ -1,0 +1,58 @@
+html {
+	scrollbar-gutter: stable;
+}
+body {
+	font-family: 'Onest', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/* Убеждаемся, что горизонтального скролла нет */
+	overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box; /* Чтобы padding не добавлял ширину элементам */
+}
+:root {
+	--c-blue: #1e415e;
+	--c-light-blue: #b5c2d1;
+	--text-white: #ffffff;
+	--text-gray: #333333;
+	--button-bgc: #426587;
+}
+/* Добавь это в начало своего CSS файла */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Настраиваем внешний вид скролла, чтобы он был аккуратным и полупрозрачным */
+::-webkit-scrollbar {
+	width: 8px; /* Ширина полосы */
+}
+
+::-webkit-scrollbar-track {
+	background: transparent; /* Трек полностью прозрачный */
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2); /* Полупрозрачный бегунок */
+	border-radius: 10px;
+	border: 2px solid transparent; /* Отступ внутри полосы */
+	background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.4); /* Чуть темнее при наведении */
+}
+h2 {
+	font-weight: 400;
+	font-size: clamp(40px, 5vw, 86px);
+	line-height: 100%;
+	letter-spacing: -0.06em;
+	color: var(--c-blue);
+}

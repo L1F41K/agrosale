@@ -1,0 +1,88 @@
+.partners {
+	padding: 120px 0; /* Паддинг 40px перенесем на внутренние элементы */
+	background: #fff;
+	overflow: hidden;
+}
+
+.partners .container {
+	padding: 0 40px; /* Заголовок выровнен по левому краю с отступом 40px */
+}
+
+.partners__slider-line {
+	display: flex;
+	gap: 56px; /* Тот самый отступ между лого */
+	padding: 20px 40px; /* 40px по бокам, чтобы первый и последний логотипы не прилипали */
+
+	overflow-x: auto; /* Включаем горизонтальный скролл */
+	scroll-snap-type: x mandatory; /* Опционально: чтобы слайды "магнитились" */
+	cursor: grab;
+	/* Прячем некрасивый дефолтный скроллбар */
+	-ms-overflow-style: none; /* IE и Edge */
+	scrollbar-width: none; /* Firefox */
+	/* Запрещаем выделение текста внутри всей линии */
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE/Edge */
+	user-select: none; /* Стандарт */
+
+	/* Убираем синий фон при нажатии на мобильных устройствах */
+	-webkit-tap-highlight-color: transparent;
+}
+
+.partners__slider-line::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+
+.partners__item {
+	flex: 0 0 auto; /* Запрещаем флексу сжимать логотипы */
+	display: flex;
+	align-items: center;
+}
+.partners__title {
+	margin-bottom: 80px;
+}
+.partners__item img {
+	height: auto;
+	max-height: 80px;
+	width: auto;
+	display: block;
+	pointer-events: none; /* Чтобы картинку нельзя было случайно "утащить" мышкой */
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+
+	/* Дополнительная защита от выделения */
+	pointer-events: none;
+}
+@media (max-width: 768px) {
+	.partners__slider-line {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr); /* 2 колонки как на макете */
+		gap: 0;
+		overflow: visible; /* Выключаем скролл */
+		padding: 0;
+		border-top: 1px solid #e0e0e0;
+		border-left: 1px solid #e0e0e0;
+	}
+	.partners__title {
+		padding: 0;
+		margin-bottom: 30px;
+	}
+	.partners .container {
+		padding: 0 20px;
+	}
+	.partners__item {
+		justify-content: center;
+		padding: 30px;
+		border-right: 1px solid #e0e0e0;
+		border-bottom: 1px solid #e0e0e0;
+		height: 120px;
+	}
+	.partners {
+		padding: 30px 0;
+	}
+	.partners__item img {
+		max-height: 50px;
+	}
+}

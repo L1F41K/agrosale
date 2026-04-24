@@ -1,0 +1,90 @@
+.contacts-section {
+	padding: 100px 40px;
+	background-color: #f5f6f5; /* Светло-серый фон как на макете */
+}
+
+.contacts-wrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: 176px; /* Большой отступ между фото и текстом */
+}
+
+/* Левая часть */
+.contacts-image {
+	flex: 0 0 600px; /* Фиксированная ширина изображения */
+	max-height: 765px;
+	height: 765px;
+}
+
+.contacts-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Правая часть */
+.contacts-content {
+	flex: 1;
+}
+
+.contacts-title {
+	margin-bottom: 60px;
+}
+
+.contact-item {
+	margin-bottom: 35px;
+}
+.contact-item:last-child {
+	margin-bottom: 0;
+}
+.contact-label {
+	font-size: 20px;
+	font-weight: 300;
+	color: var(--c-blue);
+	margin-bottom: 20px;
+	text-transform: capitalize;
+}
+
+.contact-value {
+	font-size: 28px;
+	color: #333;
+	text-decoration: none;
+	display: block;
+	line-height: 1.4;
+	font-weight: 400;
+}
+
+/* Стили для ссылок при наведении */
+a.contact-value:hover {
+	color: #1a2b48;
+}
+
+/* Адаптивность */
+@media (max-width: 1092px) {
+	.contacts-section {
+		padding: 60px 20px;
+	}
+	.contacts-wrapper {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.contacts-image {
+		flex: 0 0 auto;
+		width: 100%;
+		height: 300px;
+	}
+
+	.contacts-title {
+		margin-bottom: 30px;
+	}
+	.contact-value {
+		font-size: 18px;
+	}
+	.contact-label {
+		font-size: 16px;
+	}
+	.contact-item {
+		margin-bottom: 15px;
+	}
+}
