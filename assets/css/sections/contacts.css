@@ -121,4 +121,10 @@
 	.btn-send {
 		grid-column: span 1;
 	}
+	.feedback-section {
+		padding: 40px 20px;
+	}
+	.feedback-col {
+		padding: 20px;
+	}
 }
